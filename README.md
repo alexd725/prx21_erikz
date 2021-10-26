@@ -1,8 +1,8 @@
 <div align="center">
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/dissorial/prx21/app.py)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/dissorial/prx21_erikz/app.pyy)
 
-_This is a TL;DR version. If you'd like to read more about anything mentioned below, head over to the [web application itself](https://share.streamlit.io/dissorial/prx21/app.py)._
+_This is a TL;DR version. If you'd like to read more about anything mentioned below, head over to the [web application itself](https://share.streamlit.io/dissorial/prx21_erikz/app.py)._
 
 # PRX21: QUANTIFIED SELF
 
