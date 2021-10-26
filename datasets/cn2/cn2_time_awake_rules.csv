@@ -1,0 +1,11 @@
+﻿Rule classes,Class,Rule 1,Rule 2,Rule 3,Rule 4,Rule 5,Rule 6,Rule 7,Rule 8,Quality,Length,<13.75,13.75–16.25,16.25–18.25,18.25–20.25,>20.25
+Rule class 1,<13.75,Caffeine≤1.5 , N:QT≤3.0 , Food≤2.0 , P:QT≤4.0 , Entertainment≤2.5 , Fun≤6.5,None,None,0.611,6,21,4,0,4,5
+Rule class 2,<13.75,Social≤1.0 , N:QL≤3.0 , Caffeine≥2.0 , Work≤6.0 , Entertainment≤1.5, Wasted≤4.0 , Hobbies≤5.5 ,None,0.458,8,21,11,8,4,2
+Rule class 3,13.75–16.25,N:QT≥3.0 , Hobbies≤5.5, Fun≤3.5 , Tasks≤1.0 , N:QT≤4.0 , Fun≥0.5 ,None,None,0.5,7,8,21,9,4,0
+Rule class 4,13.75–16.25,P:QL≥4.0 , CD:S≥2.0 , Caffeine≤2.5 , CD:S≤3.0 , Sleep≥6.5 , Work≤10.0 , Internet≤5.5,None,0.289,7,10,21,14,13,16
+Rule class 5,16.25–18.25,Affter dinner≥2.0 , Caffeine≥1.5 , Cleaning≤0.5 , P:QT≥2.0 , Internet≤2.0,None,None,None,0.512,5,2,7,21,7,4
+Rule class 6,16.25–18.25,Cleaning≥0.5 , Wasted≤2.0 , Tasks≤2.5 , Fun≤5.5 , Sleep≥6.0 , Entertainment≤4.5 , CD:S≤3.0 , Lunch-dinner≤4.0,0.289,8,14,19,21,11,9
+Rule class 7,18.25–20.25,P:QT≥2.0 , Fun≥3.5 , N:QL≤4.0 , Work≤9.0,None,None,None,None,0.338,4,4,7,14,21,17
+Rule class 8,18.25–20.25,Fun≤3.5 , Sleep≤8.5 , Work≤10.5,None,None,None,None,None,0.224,3,18,25,22,21,10
+Rule class 9,>20.25,Wasted≥2.0 , Internet≥1.5 , P:QT≥2.0 , Mood≥3.0 , N:QT≥2.0 , Internet≥2.0,None,None,0.629,6,1,2,1,8,21
+Rule class 10,>20.25,N:QL≥3.0 , CD:S≥2.0 , Tasks≤3.0 , P:QL≥2.0 , Sleep≥6.0 , Social≤4.5,None,None,0.162,6,25,43,30,25,23

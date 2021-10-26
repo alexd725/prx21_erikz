@@ -1,0 +1,5 @@
+- [Figure 1](https://www.analyticsvidhya.com/blog/2021/05/multiclass-classification-using-svm/)
+- [Figure 2](https://www.analyticsvidhya.com/blog/2021/05/multiclass-classification-using-svm/)
+- [Figure 3](https://towardsdatascience.com/support-vector-machine-simply-explained-fee28eba5496)
+- [Figure 4](https://towardsdatascience.com/support-vector-machine-simply-explained-fee28eba5496)
+- [Figure 5](https://towardsdatascience.com/support-vector-machine-simply-explained-fee28eba5496)

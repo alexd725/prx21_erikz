@@ -1,0 +1,2 @@
+- It's a way to represent how confident we should be that a set of rules `A` will result in class `B`
+- Example: Select the "Above 4.75h" class. _Rule class 1_ has a `quality` value of `0.88`. Now plot the selected class distributions. As you can see, all the other classes for this rule set contain far fewer instances than the class we chose. We can therefore be reasonably confident that this rule set is "good". In contrast, the distributions for _Rule class 2_ are significantly more spread-out, and thus the `quality` value for this rule set is lower.

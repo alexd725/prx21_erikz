@@ -1,0 +1,11 @@
+﻿Rule classes,Class,Rule 1,Rule 2,Rule 3,Rule 4,Rule 5,Rule 6,Rule 7,Rule 8,Quality,Length,Mood=1,Mood=2,Mood=3,Mood=4
+Rule class 1,4,Hobbies≥2.0 , P:QT≥4.0 , Rhodiola≥1.0 , N:QT≥3.0 , P:QL≥3.0,None,None,None,0.933,5,0,0,1,27
+Rule class 2,4,CD:S≥2.0 , Breakfast-lunch≥3.0 ,Affter dinner≤2.0 , Work≤8.0 , Rhodiola≥1.0 , Wasted≥0.5,None,None,0.821,6,0,0,4,22
+Rule class 3,3,N:QL≤3.0 , P:QL≥3.0 ,Affter dinner≥2.0 , Breakfast≤3.0 ,After dinner≤4.0 , P:QT≥2.0,None,None,0.806,6,0,0,24,5
+Rule class 4,4,After dinner≥5.0 , P:QL≥2.0 , Time awake≥11.5 , Rhodiola≥1.0,None,None,None,None,0.793,4,0,0,5,22
+Rule class 5,3,P:QL≤3.0 , Time awake≤14.5 , P:QT≤2.0 , Wasted≤3.5,None,None,None,None,0.759,4,0,2,21,4
+Rule class 6,3,CD:S≤2.0 , Wasted≥2.0 , Breakfast-lunch≤2.0 , Work≤7.5 , N:QL≥2.0 , Hobbies≤13.5 , Wasted≤6.0 , Time awake≥12.5,0.629,8,0,4,21,8
+Rule class 7,4,Breakfast≥3.0 , N:QT≥2.0 , Wasted≤3.0 , CD:S≥2.0 , P:QT≥2.0,None,None,None,0.595,5,0,0,14,21
+Rule class 8,2,N:QL≤3.0 , P:QL≤3.0 , CD:S≤2.0 , Breakfast≤3.0 , Caffeine≤2.5 , Time awake≤24.0 ,None,None,0.373,7,0,21,25,11
+Rule class 9,3,Affter dinner≤3.0 , N:QT≤2.0 , Time awake≤21.0,None,None,None,None,None,0.367,3,1,18,21,18
+Rule class 10,4,Time awake≤21.5 , N:QL≥3.0 , CD:S≥2.0 , Time awake≥13.0 , Breakfast≤3.0 , Caffeine≤2.5,None,None,0.359,6,0,7,33,22

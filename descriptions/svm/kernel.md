@@ -1,0 +1,1 @@
+"In machine learning, a kernel refers to a method that allows us to apply linear classifiers to nonlinear problems by mapping non-linear data into a higher-dimensional space without the need to visit or understand that higher-dimensional space." [[Source]](https://programmathically.com/what-is-a-kernel-in-machine-learning/)

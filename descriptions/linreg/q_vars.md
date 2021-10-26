@@ -1,0 +1,3 @@
+- Oridnal data can easily be considered as a quantitative variable
+- The model works fine and seems to make sense based on the feature coefficients and model metrics
+- I'm not using these predictions and models to turn my life into an algorithm that I must obey &ndash; this project is just a hobby. If the predictions for ordinal variables here were to make no sense, that's fine

@@ -1,0 +1,16 @@
+**/__pycache__/
+pages/__pycache__/
+pages/__pycache__/cn2.cpython-37.pyc
+pages/__pycache__/decision_tree.cpython-37.pyc
+pages/__pycache__/heatmaps.cpython-37.pyc
+pages/__pycache__/intro.cpython-37.pyc
+pages/__pycache__/kmeans.cpython-37.pyc
+pages/__pycache__/knn.cpython-37.pyc
+pages/__pycache__/line_chart.cpython-37.pyc
+pages/__pycache__/linear_regression.cpython-37.pyc
+pages/__pycache__/ridgeplot.cpython-37.pyc
+pages/__pycache__/scatterplot.cpython-37.pyc
+pages/__pycache__/svm.cpython-37.pyc
+*.py[cod]
+*$py.class
+.streamlit

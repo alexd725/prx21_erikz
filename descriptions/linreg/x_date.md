@@ -1,0 +1,2 @@
+- Each row in the dataset represents one training sample that contains information about `date, sleep, internet, mood, restfulness`, and others. `Date` is simply one of the features. I am interested in relationships among the data I track, not in time series forecasting. Hence removing `date` information won't make a difference here
+- _Note: Yes, deciding to keep the information about date means I could perhaps find a relationship between `day of the week` and some variable `X`. Then again, I think there's enough features to choose from_

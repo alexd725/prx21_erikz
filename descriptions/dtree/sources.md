@@ -1,0 +1,2 @@
+- [Figure 1](https://thatascience.com/learn-machine-learning/gini-entropy/)
+- [Figure 2](https://www.researchgate.net/figure/Basic-structure-of-a-decision-tree-All-decision-trees-are-built-through-recursion_fig3_295860754)

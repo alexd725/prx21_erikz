@@ -1,0 +1,2 @@
+- **Best**: for each node, the algorithm considers all features and chooses the best split
+- **Random**: for each node, the algorithm considers a random subset of features and chooses the best split within that subset
