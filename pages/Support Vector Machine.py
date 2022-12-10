@@ -2,14 +2,14 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import seaborn as sns
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
 from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
-from utils.variables import MAIN_DATA_CATEGORICAL_VARS, MAIN_DATA_SUPPLEMENTAL_VARS, MAIN_DATA_TIME_VARS
+from sklearn.model_selection import train_test_split
+from utils.variables import MAIN_DATA_TIME_VARS, MAIN_DATA_CATEGORICAL_VARS, MAIN_DATA_SUPPLEMENTAL_VARS
 from utils.decryption import decrypt_data
 
-st.title('K-nearest neighbors classifier')
+st.title('Support-vector machine (SVM)')
 st.markdown('---')
 
 try:
@@ -18,26 +18,23 @@ except KeyError:
     st.error('You must be logged in to access this page')
     st.stop()
 
-def spaces(size):
-    return "&ensp;" * size
 
-
-left_col, right_col = st.columns(2)
-
-
-@st.cache
+@st.cache(allow_output_mutation=True)
 def load_data():
     return decrypt_data('datasets/main_data/main_data.csv')
 
 
 df = load_data()
+
 sc = StandardScaler()
+left, right = st.columns(2)
+
 
 chosen_col = st.sidebar.selectbox("Variable to predict",
                                   MAIN_DATA_CATEGORICAL_VARS)
 
 
-with right_col:
+with left:
     time_features_input = st.multiselect("Time features",
                                          MAIN_DATA_TIME_VARS,
                                          default=MAIN_DATA_TIME_VARS)
@@ -45,7 +42,7 @@ with right_col:
     chosen_col_index = MAIN_DATA_CATEGORICAL_VARS.index(chosen_col)
     available_categorical_features = MAIN_DATA_CATEGORICAL_VARS[:chosen_col_index] + \
         MAIN_DATA_CATEGORICAL_VARS[chosen_col_index + 1:]
-    categorical_features_input = st.multiselect("Categorical features",
+    categorical_features_input = st.multiselect("Categorial features",
                                                 available_categorical_features,
                                                 default=available_categorical_features)
 
@@ -55,7 +52,6 @@ with right_col:
 
 features_input = time_features_input + \
     categorical_features_input + supplemental_features_input
-
 
 X = df[features_input]
 y = df[chosen_col]
@@ -77,34 +73,54 @@ X_train, X_test, y_train, y_test = train_test_split(X,
 X_train = sc.fit_transform(X_train)
 X_test = sc.fit_transform(X_test)
 
-n_input = st.sidebar.number_input(
-    "Number of neighbors",
-    min_value=2,
-    max_value=10,
-    value=3,
-    step=1,
+# kernels
+chosen_kernel = st.sidebar.selectbox("Kernel",
+                                     ["rbf", "linear", "poly", "sigmoid"])
+
+
+poly_degree = 3
+
+if chosen_kernel == "poly":
+    poly_degree = st.sidebar.number_input(
+        "Degree for the polynomial kernel",
+        min_value=2,
+        max_value=6,
+        value=3,
+        step=1,
+    )
+
+# regularization parameter
+c_input = st.sidebar.number_input(
+    "Misclassification penalty",
+    min_value=0.25,
+    max_value=3.0,
+    value=1.0,
+    step=0.25,
 )
 
-if not n_input:
-    with st.sidebar:
-        st.warning("Please select the number of neighbors to use above")
-        st.stop()
 
-weights_input = st.sidebar.selectbox("Weight function used in prediction",
-                                     ["uniform", "distance"])
+# gamma
+gamma_default = 1 / len(features_input)
+gamma_input = st.sidebar.number_input("Gamma",
+                                      min_value=0.0,
+                                      max_value=1.0,
+                                      value=gamma_default,
+                                      step=0.01)
 
+
+if gamma_default == 1:
+    st.button(
+        "Confirm the parameters set above and re-calculate the model")
 
 # training and fitting the model
 
 
 @st.cache(allow_output_mutation=True)
 def create_model():
-    model = KNeighborsClassifier(
-        n_neighbors=n_input,
-        metric="minkowski",
-        p=2,
-        weights=weights_input,
-    )
+    model = SVC(C=c_input,
+                degree=poly_degree,
+                kernel=chosen_kernel,
+                gamma=gamma_input)
     model.fit(X_train, y_train)
     return model
 
@@ -116,13 +132,9 @@ except Exception:
     st.stop()
 y_pred = model.predict(X_test)
 
-# accuracy
-
 
 def calculate_accuracy():
     return np.round((model.score(X_test, y_test) * 100), 2)
-
-# confusion matrix of actual vs. predicted
 
 
 @st.cache
@@ -130,14 +142,13 @@ def get_confusion_matrix():
     return confusion_matrix(y_test, y_pred)
 
 
-testAcc = calculate_accuracy()
+# confusion matrix of actual vs. predicted, accuracy metric
+with right:
+    testAcc = calculate_accuracy()
+    st.info("**The model's classification accuracy is {}%**".format(
+        testAcc))
 
-# displaying the accuracy metric and confusion matrix
-with left_col:
-    sp = spaces(19)
-    st.info("**{} The model's classification accuracy is {}%**".format(
-        sp, testAcc))
-    labelY, labelX = np.unique(y_test), np.unique(y_pred)
+    # confusion matrix
     cm = get_confusion_matrix()
     labels = [1, 2, 3, 4, 5]
     labelY, labelX = cm.shape[0], cm.shape[1]
